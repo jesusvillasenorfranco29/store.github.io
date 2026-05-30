@@ -1,0 +1,142 @@
+.menu{
+  	  font-family: 'Permanent Marker', cursive;
+      font-size: 28px;
+	  text-align: center;
+	  list-style: none;
+	  padding: 20px;
+	  background-color: #2b2b2b;
+}
+.menu a{
+	text-decoration: none !important;
+}
+.menu li{
+	  position: relative;
+	  display: inline-block;
+}
+.menu li:hover ul{
+	  display: block;
+}
+.menu ul{
+	  display: none;
+	  position: absolute;
+	  top: 100%;
+	  left: 0;
+}
+.menu ul li a{
+	display: block;
+	padding: 10px;
+	text-decoration: none;
+}
+.menu li a{
+	text-decoration: none !important;
+	padding: 10px;
+}
+.menu a:link, 
+.menu a:visited {
+  color: #ffffff; /* Cambia este color si no lo quieres blanco */
+  text-decoration: none !important;
+}
+
+
+
+
+.catalogo-contenedor {
+  display: grid;
+  /* Crea columnas automáticas de mínimo 250px según el espacio de la pantalla */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+  gap: 20px;          /* Separación limpia entre cada tarjeta */
+  padding: 20px;
+  max-width: 1200px;  /* Centra el catálogo en pantallas muy grandes */
+  margin: 0 auto;
+}
+
+/* Modificación rápida a tu .producto (para que se adapte al catálogo) */
+.producto {
+  width: auto;        /* Cambia de 250px a auto para que la cuadrícula controle el tamaño */
+  margin: 0;          /* El margen ahora lo controla el 'gap' del contenedor */
+}
+.producto img {
+  width: 100% !important;   /* Obliga a usar el ancho del cubo */
+  max-width: 100% !important;
+  height: 200px !important; /* Altura fija para que no se deforme */
+  object-fit: contain !important; /* Muestra el producto completo sin recortar */
+  display: block !important;
+  margin: 0 auto 15px auto !important; /* Centra la imagen */
+}
+
+
+
+
+.pie-pagina {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1a1a1a; /* Fondo negro suave */
+  color: #ffffff; /* Texto blanco */
+  font-family: Arial, sans-serif;
+  padding: 40px 20px 10px 20px;
+  margin-top: 50px; /* Separación del contenido de arriba */
+}
+
+
+.footer-contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Hace que se adapte a celulares */
+  gap: 30px;
+}
+
+
+.footer-columna {
+  flex: 1;
+  min-width: 250px; /* Evita que se aplasten en pantallas chicas */
+}
+
+.footer-columna h3 {
+  color: #ff9900; /* Título en color naranja llamativo */
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.footer-columna p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cccccc; /* Texto gris claro */
+}
+
+
+.footer-columna ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-columna ul li {
+  margin-bottom: 10px;
+}
+
+/* Estilo de los enlaces */
+.footer-columna a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s; /* Animación suave al pasar el mouse */
+}
+
+/* Efecto Hover en los enlaces */
+.footer-columna a:hover {
+  color: #ff9900; /* Cambia a naranja al pasar el mouse */
+}
+
+/* Barra inferior de derechos reservados */
+.footer-inferior {
+  border-top: 1px solid #333333; /* Línea delgada divisoria */
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 12px;
+  color: #777777;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>index</title>
+  <script src="https://jquery.com"></script>
+  <link rel="icon" href="logo.ico">
+  <link href="../menu.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<ul class="menu">
+    <li><a href="index.html">index</a></li>
+    <li><a href="#">products</a><ul>
+        <li><a href="products/procesors.html">procesadores</a></li>
+        <li><a href="products/ram.html">momorias ram</a></li>
+        <li><a href="products/graphicards.html">tarjetas graficas</a></li>
+        <li><a href="products/motherboards.html">tarjetas madre</a></li>
+      </ul></li>
+    <li><a href="#">build</a><ul>
+      <li><a href="build/gamer.html">computadoras gamer</a></li>
+      <li><a href="build/workstation.html">workstation</a></li>
+    </ul></li>
+	<li class="carrito-icono"><a href="carrito.html"><img src="../BAG-01.svg" alt="Carrito de compras"></a></li>
+</ul>
+
+	
+	
+	
+<div class="catalogo-contenedor">
+<div class="producto">
+    <h3>gtx 1050</h3>
+	<img src="https://m.media-amazon.com/images/I/71BPrme0r4L._AC_SL1500_.jpg" alt="50%">
+    <p>Precio: $1000.00</p>
+    <!-- El atributo data-precio es el más importante -->
+    <button class="btn-agregar" data-precio="1000.00">Agregar al carrito</button>
+</div>
+
+		
+<!-- Producto 2 -->
+<div class="producto">
+    <h3>dial up modem card</h3>
+	<img src="https://m.media-amazon.com/images/I/512EYlDREmL._AC_SL1000_.jpg" alt="50%">
+    <p>Precio: $500.00</p>
+    <button class="btn-agregar" data-precio="500.00">Agregar al carrito</button>
+</div>
+	</div>
+
+
+	
+	
+<footer class="pie-pagina">
+  <div class="footer-contenedor">
+    
+    <!-- Columna 1: Sobre la tienda -->
+    <div class="footer-columna">
+      <h3>POUL INC CORPORATION</h3>
+      <p>La mejor tienda en línea de México. Calidad y confianza en cada envío.</p>
+    </div>
+
+    <!-- Columna 2: Enlaces de Soporte -->
+    <div class="footer-columna">
+      <h3>Atención al Cliente</h3>
+      <ul>
+        <li><a href="#">Preguntas Frecuentes</a></li>
+        <li><a href="#">Políticas de Devolución</a></li>
+        <li><a href="#">Rastrea tu Pedido</a></li>
+      </ul>
+    </div>
+
+    <!-- Columna 3: Enlaces Legales -->
+    <div class="footer-columna">
+      <h3>Legales y Derechos</h3>
+      <ul>
+        <li><a href="#">Términos y Condiciones</a></li>
+        <li><a href="#">Aviso de Privacidad</a></li>
+        <li><a href="#">Contrato de Adhesión (PROFECO)</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Barra final de derechos de autor -->
+  <div class="footer-inferior">
+    <p>&copy; 2026 POUL INC CORPORATION. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+
+
+<!-- Agrega este contenedor oculto en cualquier parte de tu <body> para el pop-up -->
+<div id="pop-up-apple" style="display:none; position:fixed; top:20px; right:20px; background:#333; color:#fff; padding:15px 25px; border-radius:8px; font-family:-apple-system, BlinkMacSystemFont, sans-serif; box-shadow:0 4px 12px rgba(0,0,0,0.15); z-index:9999;">
+    Agregado: <span id="pop-up-nombre" style="font-weight:bold;"></span>
+</div>
+
+<script>
+$(document).ready(function() {
+    // 1. Cargar carrito previo si existe en la memoria, si no, empezar en vacío
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    $('.btn-agregar').click(function() {
+        // Obtenemos los datos del producto usando jQuery
+        let nombre = $(this).siblings('h3').text(); 
+        let precio = parseFloat($(this).attr('data-precio'));
+
+        // 2. Guardamos el objeto en nuestra lista
+        carrito.push({ nombre: nombre, precio: precio });
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+
+        // 3. EFECTO POP-UP (Estilo Apple: aparece, espera y se desvanece)
+        $('#pop-up-nombre').text(nombre);
+        $('#pop-up-apple').fadeIn(300).delay(2000).fadeOut(300);
+    });
+});
+</script>
+</body>
+</html>
