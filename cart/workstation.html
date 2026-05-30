@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Workstation Builds</title>
+    <!-- jQuery desde la nube (CDN) -->
+    <script src="https://jquery.com"></script>
+    <link href="../menu.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<ul class="menu">
+    <!-- RUTAS CORREGIDAS: "../" sale de la carpeta build para encontrar los archivos reales -->
+    <li><a href="../index.html">index</a></li>
+    <li><a href="../products/products.html">products</a>
+        <ul>
+            <li><a href="../products/procesors.html">procesadores</a></li>
+            <li><a href="../products/ram.html">memorias ram</a></li>
+            <li><a href="../products/graphicards.html">tarjetas graficas</a></li>
+        </ul>
+    </li>
+    <li><a href="../products/motherboards.html">tarjetas madre</a></li>
+    <li><a href="#">build</a>
+        <ul>
+            <li><a href="gamer.html">computadoras gamer</a></li> <!-- Está en la misma carpeta build/ -->
+            <li><a href="workstation.html">workstation</a></li>
+        </ul>
+    </li>
+    <li class="carrito-icono"><a href="../cart/cart.html"><img src="../bag.svg" alt="Carrito de compras"></a></li>
+</ul>
+	
+<h1>¿Cuánto estás dispuesto a gastar en tu Workstation?</h1>
+
+<h3>procesadores</h3>
+<div class="catalogo-contenedor">
+    <div class="producto">
+        <h3>i7</h3>
+        <h4>Sku BX8071514700K</h4>
+        <!-- Imagen pública libre de bloqueos -->
+        <img src="https://unsplash.com" alt="Intel i7" style="width:200px;">
+        <p>Precio: $1000.00</p>
+        <button class="btn-agregar" data-precio="1000.00">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+        <h3>i9</h3>
+        <h4>Sku BX8071512900K</h4>
+        <img src="https://unsplash.com" alt="Intel i9" style="width:200px;">
+        <p>Precio: $12000.00</p>
+        <button class="btn-agregar" data-precio="12000.00">Agregar al carrito</button>
+    </div>
+</div>
+	
+<h3>Memorias Ram</h3>
+<div class="catalogo-contenedor">
+    <div class="producto">
+        <h3>Crucial 64GB Pro DDR5</h3>
+        <img src="https://unsplash.com" alt="RAM DDR5" style="width:200px;">
+        <p>Precio: $14736.00</p>
+        <button class="btn-agregar" data-precio="14736.00">Agregar al carrito</button>
+    </div>
+</div>
+
+<!-- Pop-up flotante estilo Apple -->
+<div id="pop-up-apple" style="display:none; position:fixed; top:20px; right:20px; background:#333; color:#fff; padding:15px 25px; border-radius:8px; font-family:-apple-system, BlinkMacSystemFont, sans-serif; box-shadow:0 4px 12px rgba(0,0,0,0.15); z-index:9999;">
+    Agregado: <span id="pop-up-nombre" style="font-weight:bold;"></span>
+</div>
+
+<script>
+$(document).ready(function() {
+    $('.btn-agregar').click(function() {
+        // 1. Obtenemos el nombre y el precio del producto clonado
+        let nombre = $(this).siblings('h3').text(); 
+        let precio = parseFloat($(this).attr('data-precio'));
+
+        // 2. Codificamos los textos para que la URL no se rompa con los espacios
+        let nombreUrl = encodeURIComponent(nombre);
+        let precioUrl = precio.toFixed(2);
+
+        // 3. Redirigimos al carrito inyectando las variables en el enlace
+        // Usamos "../" para salir de la carpeta build/ e ingresar a cart/
+        window.location.href = `../cart/cart.html?nombre=${nombreUrl}&precio=${precioUrl}`;
+    });
+});
+</script>
+
+</body>
+</html>
