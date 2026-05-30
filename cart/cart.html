@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<link rel="icon" href="../logo.ico">
-    <link href="../menu.css" rel="stylesheet" type="text/css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito</title>
-    <!-- jQuery desde la nube -->
+    <title>Tu Carrito estilo Apple</title>
+    
+    <!-- PASO 1: IMPORTANTE - Añadir jQuery en el carrito para que funcione la lógica -->
     <script src="https://jquery.com"></script>
     
     <style>
@@ -20,8 +19,7 @@
 
         /* Estilos del Pop-up Modal */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(5px); z-index: 1000; justify-content: center; align-items: center; }
-        .modal-box { background: white; padding: 35px; border-radius: 20px; width: 90%; max-width: 500px; max-height: 90vh; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.15); animation: zoomIn 0.3s ease; }
-        @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .modal-box { background: white; padding: 35px; border-radius: 20px; width: 90%; max-width: 500px; max-height: 90vh; overflow-y: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
         
         .modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e5e5ea; padding-bottom: 15px; margin-bottom: 20px; }
         .btn-cerrar { background: none; border: none; font-size: 24px; cursor: pointer; color: #86868b; }
@@ -43,24 +41,11 @@
     </style>
 </head>
 <body>
-<ul class="menu">
-    <li><a href="../index.html">index</a></li>
-    <li><a href="products.html">products</a><ul>
-        <li><a href="../products/procesors.html">procesadores</a></li>
-        <li><a href="../products/ram.html">momorias ram</a></li>
-        <li><a href="../products/graphicards.html">tarjetas graficas</a></li>
-        <li><a href="../products/motherboards.html">tarjetas madre</a></li>
-      </ul></li>
-    <li><a href="#">build</a><ul>
-      <li><a href="../build/gamer.html">computadoras gamer</a></li>
-      <li><a href="../build/workstation.html">workstation</a></li>
-    </ul></li>
-	<li class="carrito-icono"><a href="../carrito.html"><img src="../bag.svg" alt="Carrito de compras"></a></li>
-</ul>
-	
-	
+
     <div class="contenedor-principal">
         <h1>Revisa tu bolsa.</h1>
+        
+        <!-- Aquí se van a pintar los procesadores o memorias agregadas -->
         <div id="lista-productos"></div>
 
         <div class="resumen">
@@ -76,27 +61,27 @@
                 <button class="btn-cerrar" id="btn-cerrar-pago">&times;</button>
             </div>
 
-            <!-- Resumen de Costos dentro del Pop-up -->
             <table class="tabla-desglose">
-                <tr>
-                    <td>Subtotal (Ventas):</td>
-                    <td style="text-align: right;">$<span id="pop-subtotal">0.00</span></td>
-                </tr>
-                <tr>
-                    <td>Envío:</td>
-                    <td style="text-align: right;">$<span id="pop-envio">0.00</span></td>
-                </tr>
-                <tr class="fila-total">
-                    <td style="padding-top:15px;">Total a pagar:</td>
-                    <td style="padding-top:15px; text-align: right;">$<span id="pop-total">0.00</span></td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td>Subtotal (Ventas):</td>
+                        <td style="text-align: right;">$<span id="pop-subtotal">0.00</span></td>
+                    </tr>
+                    <tr>
+                        <td>Envío:</td>
+                        <td style="text-align: right;">$<span id="pop-envio">0.00</span></td>
+                    </tr>
+                    <tr class="fila-total">
+                        <td style="padding-top:15px;">Total a pagar:</td>
+                        <td style="padding-top:15px; text-align: right;">$<span id="pop-total">0.00</span></td>
+                    </tr>
+                </tbody>
             </table>
 
             <div class="aviso-academico">
                 ⚠️ Demostración Académica: NO ingreses tarjetas reales.
             </div>
 
-            <!-- Formulario de Tarjeta Ficticio -->
             <form id="form-pago-ficticio">
                 <div class="campo-formulario">
                     <label>Nombre en la tarjeta</label>
@@ -119,29 +104,16 @@
                     </div>
                 </div>
 
-                <!-- Buscador de todos los bancos del mundo -->
                 <div class="campo-formulario">
                     <label>Banco Remitente</label>
                     <input type="text" list="lista-bancos" placeholder="Escribe para buscar tu banco..." required>
                     <datalist id="lista-bancos">
-                        <!-- Bancos Globales y de México comunes -->
-                        <option value="BBVA">
-                        <option value="Santander">
-                        <option value="Citibanamex">
-                        <option value="Banorte">
-                        <option value="HSBC">
-                        <option value="Scotiabank">
-                        <option value="Banco Azteca">
-                        <option value="Inbursa">
-                        <option value="Chase Bank (USA)">
-                        <option value="Bank of America (USA)">
-                        <option value="Wells Fargo (USA)">
-                        <option value="Barclays (UK)">
-                        <option value="BNP Paribas (Francia)">
-                        <option value="Deutsche Bank (Alemania)">
-                        <option value="Itaú (Brasil)">
-                        <option value="Banco de Bogotá (Colombia)">
-                        <option value="Disney Card">
+                        <option value="BBVA"></option>
+                        <option value="Santander"></option>
+                        <option value="Citibanamex"></option>
+                        <option value="Banorte"></option>
+                        <option value="HSBC"></option>
+                        <option value="Scotiabank"></option>
                     </datalist>
                 </div>
 
@@ -151,66 +123,63 @@
     </div>
 
     <script>
-$(document).ready(function() {
-    // 1. Leer los productos desde la memoria
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    let subtotal = 0;
+    $(document).ready(function() {
+        // PASO 2: Leer el arreglo 'carrito' guardado en localStorage
+        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+        let subtotal = 0;
 
-    if(carrito.length === 0) {
-        $('#lista-productos').html('<p>Tu bolsa está vacía.</p>');
-        $('#btn-abrir-pago').prop('disabled', true).css('background', '#a1a1a6');
-    } else {
-        carrito.forEach(function(producto) {
-            subtotal += producto.precio;
-            $('#lista-productos').append(`
-                <div class="item-carrito">
-                    <span>${producto.nombre}</span>
-                    <span>$${producto.precio.toFixed(2)}</span>
-                </div>
-            `);
-        });
-    }
+        // Limpiar contenedor por seguridad antes de agregar elementos
+        $('#lista-productos').empty();
 
-    // Calcular costo de envío dinámico
-    let costoEnvio = subtotal > 100 || subtotal === 0 ? 0.00 : 10.00;
-    let totalFinal = subtotal + costoEnvio;
-
-    // 2. Controlar la apertura y cierre del Pop-up con jQuery
-    $('#btn-abrir-pago').click(function() {
-        $('#pop-subtotal').text(subtotal.toFixed(2));
-        $('#pop-envio').text(costoEnvio.toFixed(2));
-        $('#pop-total').text(totalFinal.toFixed(2));
-        
-        $('#modal-pago').css('display', 'flex');
-    });
-
-    $('#btn-cerrar-pago').click(function() {
-        $('#modal-pago').hide();
-    });
-
-    $('#modal-pago').click(function(e) {
-        if ($(e.target).hasClass('modal-overlay')) {
-            $(this).hide();
+        if(carrito.length === 0) {
+            $('#lista-productos').html('<p>Tu bolsa está vacía.</p>');
+            $('#btn-abrir-pago').prop('disabled', true).css('background', '#a1a1a6');
+        } else {
+            // Recorrer e insertar cada objeto guardado
+            carrito.forEach(function(producto) {
+                subtotal += producto.precio;
+                $('#lista-productos').append(`
+                    <div class="item-carrito">
+                        <span>${producto.nombre}</span>
+                        <span>$${producto.precio.toFixed(2)}</span>
+                    </div>
+                `);
+            });
         }
-    });
 
-    // 3. Simulación del envío de pago
-    $('#form-pago-ficticio').submit(function(e) {
-        e.preventDefault();
-        
-        alert('Procesando pago de $' + totalFinal.toFixed(2) + ' de forma segura...');
-        
-        setTimeout(function() {
-            alert('¡Pago Simulado Exitosamente! Gracias por tu compra escolar.');
-            localStorage.removeItem('carrito'); 
+        let costoEnvio = subtotal > 100 || subtotal === 0 ? 0.00 : 10.00;
+        let totalFinal = subtotal + costoEnvio;
+
+        $('#btn-abrir-pago').click(function() {
+            $('#pop-subtotal').text(subtotal.toFixed(2));
+            $('#pop-envio').text(costoEnvio.toFixed(2));
+            $('#pop-total').text(totalFinal.toFixed(2));
+            $('#modal-pago').css('display', 'flex');
+        });
+
+        $('#btn-cerrar-pago').click(function() {
+            $('#modal-pago').hide();
+        });
+
+        $('#modal-pago').click(function(e) {
+            if ($(e.target).hasClass('modal-overlay')) {
+                $(this).hide();
+            }
+        });
+
+        $('#form-pago-ficticio').submit(function(e) {
+            e.preventDefault();
+            alert('Procesando pago de $' + totalFinal.toFixed(2) + ' de forma segura...');
             
-            // CORREGIDO: "../" sale de la carpeta "cart" para regresar al index principal correctamente
-            window.location.href = '../index.html'; 
-        }, 2000);
+            setTimeout(function() {
+                alert('¡Pago Simulado Exitosamente! Gracias por tu compra escolar.');
+                localStorage.removeItem('carrito');
+                
+                // PASO 3: Ruta corregida para salir de la carpeta cart/ y regresar al index.html de la raíz
+                window.location.href = '../index.html';
+            }, 2000);
+        });
     });
-});
-</script>
-
-
+    </script>
 </body>
 </html>
