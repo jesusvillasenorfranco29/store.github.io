@@ -1,241 +1,187 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="utf-8">
-<title>index</title>
-  <script src="https://jquery.com"></script>
-  <link rel="icon" href="logo.ico">
-  <link href="../menu.css" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <title>Workstation Builds</title>
+    <!-- Carga la librería jQuery real desde la nube -->
+    <script src="https://jquery.com"></script>
+    <link rel="icon" href="../logo.ico"> <!-- CORREGIDO: Sale de build para buscar el icono -->
+    <link href="../menu.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <ul class="menu">
-    <li><a href="index.html">index</a></li>
-    <li><a href="products.html">products</a><ul>
-        <li><a href="products/procesors.html">procesadores</a></li>
-        <li><a href="products/ram.html">momorias ram</a></li>
-        <li><a href="products/graphicards.html">tarjetas graficas</a></li></ul></li>
-        <li><a href="products/motherboards.html">tarjetas madre</a></li>
-    <li><a href="#">build</a><ul>
-      <li><a href="build/gamer.html">computadoras gamer</a></li>
-      <li><a href="build/workstation.html">workstation</a></li>
-    </ul></li>
-	<li class="carrito-icono"><a href="cart/cart.html"><img src="../bag.svg" alt="Carrito de compras"></a></li>
+    <!-- CORREGIDO: Todos los enlaces del menú ahora salen de "build/" con "../" para ir a las rutas correctas -->
+    <li><a href="../index.html">index</a></li>
+    <li><a href="../products.html">products</a>
+        <ul>
+            <li><a href="../products/procesors.html">procesadores</a></li>
+            <li><a href="../products/ram.html">memorias ram</a></li>
+            <li><a href="../products/graphicards.html">tarjetas graficas</a></li>
+        </ul>
+    </li>
+    <li><a href="../products/motherboards.html">tarjetas madre</a></li>
+    <li><a href="#">build</a>
+        <ul>
+            <li><a href="gamer.html">computadoras gamer</a></li> <!-- Está en la misma carpeta, no lleva ../ -->
+            <li><a href="workstation.html">workstation</a></li>
+        </ul>
+    </li>
+    <li class="carrito-icono"><a href="../cart/cart.html"><img src="../bag.svg" alt="Carrito de compras"></a></li>
 </ul>
 	
-	
-	
-	
-<h1>Cuanto estas dispuesto a gastar?</h1>
-	<h3>procesadores</h3>
+<h1>¿Cuánto estás dispuesto a gastar en tu Workstation?</h1>
+
+<h3>procesadores</h3>
 <div class="catalogo-contenedor">
-	<div class="producto">
-    <h3>i7</h3>
-	<h4>Sku BX8071514700K</h4>
-	<h4>Categoria procesador</h4>
-	<h4>Sub categoria procesador para Workstation</h4>
-	<h4>Medidas</h4>
-	<h4>Atributos</h4>
-	<h4>descripcion</h4>
-	<img src="https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=500/https://static.bhphoto.com/images/multiple_images/images500x500/1697445926_IMG_2099205.jpg" alt="50%">
-    <p>Precio: $1000.00</p>
-   
-    <button class="btn-agregar" data-precio="1000.00">Agregar al carrito</button>
-	</div>
-<div class="producto">
-    <h3>i9</h3>
-	<h4>Sku BX8071512900K</h4>
-	<h4>Categoria procesador</h4>
-	<h4>Sub categoria procesador para Workstation</h4>
-	<h4>Medidas Largo 10.1 ancho 11.43 grosor4.5</h4>
-	<h4>Atributos twentieth core</h4>
-	<h4>descripcion 20 cores y 28 nucleos fisicos</h4>
-	<img src="https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=345/https://static.bhphoto.com/images/images345x345/1704736009_1802190.jpg" alt="50%">
-    <p>Precio: $12000.00</p>
-    <button class="btn-agregar" data-precio="12000.00">Agregar al carrito</button>
-</div>
-<div class="producto">
-    <h3>w3</h3>
-	<h4>Sku PK8071305129200</h4>
-	<h4>Categoria procesador</h4>
-	<h4>Sub categoria procesador para Workstation</h4>
-	<h4>Medidas</h4>
-	<h4>Atributos</h4>
-	<h4>descripcion</h4>
-	<img src="https://http2.mlstatic.com/D_NQ_NP_2X_788492-MLM90392935056_082025-F.webp" alt="50%">
-    <p>Precio: $25000.00</p>
-    <button class="btn-agregar" data-precio="25000.00">Agregar al carrito</button>
-</div>
-	<div class="producto">
-    <h3>w5</h3>
-	<h4>Sku PK8071305082100</h4>
-	<h4>Categoria procesador</h4>
-	<h4>Sub categoria procesador para Workstation</h4>
-	<h4>Medidas</h4>
-	<h4>Atributos</h4>
-	<h4>descripcion</h4>
-	<img src="https://www.intel.com/content/dam/www/central-libraries/us/en/images/2023-01/badge-xeon-workstation-w5.png" alt="50%">
-    <p>Precio: $30000.00</p>
-    <button class="btn-agregar" data-precio="3000.00">Agregar al carrito</button>
-</div>
-<div class="producto">
-    <h3>w7</h3>
-	<h4>Sku BX807132495</h4>
-	<h4>Categoria procesador</h4>
-	<h4>Sub categoria procesador para Workstation</h4>
-	<h4>Medidas</h4>
-	<h4>Atributos</h4>
-	<h4>descripcion</h4>
-	<img src="https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=345/https://static.bhphoto.com/images/images345x345/1746627699_1835439.jpg" alt="50%">
-    <p>Precio: $35000.00</p>
-    <button class="btn-agregar" data-precio="35000.00">Agregar al carrito</button>
-</div>
-	<div class="producto">
-    <h3>w9</h3>
-	<img src="https://www.intel.com/content/dam/www/central-libraries/us/en/images/2023-01/badge-xeon-workstation-w9.png" alt="50%">
-    <p>Precio: $46000.00</p>
-    <button class="btn-agregar" data-precio="46000.00">Agregar al carrito</button>
+    <div class="producto">
+        <h3>i7</h3>
+        <h4>Sku BX8071514700K</h4>
+        <h4>Categoria procesador</h4>
+        <h4>Sub categoria procesador para Workstation</h4>
+        <h4>Medidas</h4>
+        <h4>Atributos</h4>
+        <h4>descripcion</h4>
+        <img src="https://bhphotovideo.com" alt="50%">
+        <p>Precio: $1000.00</p>
+        <button class="btn-agregar" data-precio="1000.00">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+        <h3>i9</h3>
+        <h4>Sku BX8071512900K</h4>
+        <h4>Categoria procesador</h4>
+        <h4>Sub categoria procesador para Workstation</h4>
+        <h4>Medidas Largo 10.1 ancho 11.43 grosor4.5</h4>
+        <h4>Atributos twentieth core</h4>
+        <h4>descripcion 20 cores y 28 nucleos fisicos</h4>
+        <img src="https://bhphotovideo.com" alt="50%">
+        <p>Precio: $12000.00</p>
+        <button class="btn-agregar" data-precio="12000.00">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+        <h3>w3</h3>
+        <h4>Sku PK8071305129200</h4>
+        <h4>Categoria procesador</h4>
+        <h4>Sub categoria procesador para Workstation</h4>
+        <h4>Medidas</h4>
+        <h4>Atributos</h4>
+        <h4>descripcion</h4>
+        <img src="https://mlstatic.com" alt="50%">
+        <p>Precio: $25000.00</p>
+        <button class="btn-agregar" data-precio="25000.00">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+        <h3>w5</h3>
+        <h4>Sku PK8071305082100</h4>
+        <h4>Categoria procesador</h4>
+        <h4>Sub categoria procesador para Workstation</h4>
+        <h4>Medidas</h4>
+        <h4>Atributos</h4>
+        <h4>descripcion</h4>
+        <img src="https://intel.com" alt="50%">
+        <p>Precio: $30000.00</p>
+        <button class="btn-agregar" data-precio="30000.00">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+        <h3>w7</h3>
+        <h4>Sku BX807132495</h4>
+        <h4>Categoria procesador</h4>
+        <h4>Sub categoria procesador para Workstation</h4>
+        <h4>Medidas</h4>
+        <h4>Atributos</h4>
+        <h4>descripcion</h4>
+        <img src="https://bhphotovideo.com" alt="50%">
+        <p>Precio: $35000.00</p>
+        <button class="btn-agregar" data-precio="35000.00">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+        <h3>w9</h3>
+        <img src="https://intel.com" alt="50%">
+        <p>Precio: $46000.00</p>
+        <button class="btn-agregar" data-precio="46000.00">Agregar al carrito</button>
+    </div>
 </div>
 	
-	<h3>Memorias Ram</h3>
-	<div class="producto">
-    <h3>Crucial 64GB Pro DDR5 5600 MHz Memory</h3>
-	<h4>Sku CP2K32G56C46U5</h4>
-	<h4>Categoria Memoria ram</h4>
-	<h4>Sub categoria Ram para Workstation</h4>
-	<h4>Medidas</h4>
-	<h4>Atributos</h4>
-	<h4>descripcion</h4>
-	<img src="https://static.bhphoto.com/images/images750x750/1723108535_1779715.jpg" alt="50%">
-    <p>Precio: $14736.00</p>
-    <button class="btn-agregar" data-precio="14736.00">Agregar al carrito</button>
-</div>
-<div class="producto">
-    <h3>Crucial 96GB Pro DDR5 5600 MHz Memory</h3>
-	<h4>Sku MFR CP2K48G56C46U5</h4>
-	<h4>Categoria Memoria ram</h4>
-	<h4>Sub categoria Ram para Workstation</h4>
-	<h4>Medidas</h4>
-	<h4>Atributos</h4>
-	<h4>descripcion</h4>
-	<img src="https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=500,quality=95/https://www.bhphotovideo.com/images/images500x500/crucial_cp2k48g56c46u5_pro_96gb_ddr5_5600_cl46_1723108823_1779716.jpg" alt="50%">
-    <p>Precio: $35000.00</p>
-    <button class="btn-agregar" data-precio="35000.00">Agregar al carrito</button>
-</div>
-	<div class="producto">
-    <h3>OWC 128GB DDR4 3200 MHz ECC RDIMM Memory Module</h3>
-	<h4>Sku OWC3R2D48R4128G</h4>
-	<h4>Categoria Memoria ram</h4>
-	<h4>Sub categoria Ram para Workstation</h4>
-	<h4>Medidas</h4>
-	<h4>Atributos</h4>
-	<h4>descripcion</h4>
-	<img src="https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=500,quality=95/https://www.bhphotovideo.com/images/images500x500/owc_owc3r2d48r4128g_128gb_pc25600_ddr4_ecc_r_1749726682_1900322.jpg" alt="50%">
-    <p>Precio: $46000.00</p>
-    <button class="btn-agregar" data-precio="46000.00">Agregar al carrito</button>
+<h3>Memorias Ram</h3>
+<div class="catalogo-contenedor">
+    <div class="producto">
+        <h3>Crucial 64GB Pro DDR5 5600 MHz Memory</h3>
+        <h4>Sku CP2K32G56C46U5</h4>
+        <h4>Categoria Memoria ram</h4>
+        <h4>Sub categoria Ram para Workstation</h4>
+        <h4>Medidas</h4>
+        <h4>Atributos</h4>
+        <h4>descripcion</h4>
+        <img src="https://bhphoto.com" alt="50%">
+        <p>Precio: $14736.00</p>
+        <button class="btn-agregar" data-precio="14736.00">Agregar al carrito</button>
+    </div>
 
+    <div class="producto">
+        <h3>Crucial 96GB Pro DDR5 5600 MHz Memory</h3>
+        <h4>Sku MFR CP2K48G56C46U5</h4>
+        <h4>Categoria Memoria ram</h4>
+        <h4>Sub categoria Ram para Workstation</h4>
+        <h4>Medidas</h4>
+        <h4>Atributos</h4>
+        <h4>descripcion</h4>
+        <img src="https://bhphotovideo.com" alt="50%">
+        <p>Precio: $35000.00</p>
+        <button class="btn-agregar" data-precio="35000.00">Agregar al carrito</button>
+    </div>
+
+    <div class="producto">
+        <h3>OWC 128GB DDR4 3200 MHz ECC RDIMM Memory Module</h3>
+        <h4>Sku OWC3R2D48R4128G</h4>
+        <h4>Categoria Memoria ram</h4>
+        <h4>Sub categoria Ram para Workstation</h4>
+        <h4>Medidas</h4>
+        <h4>Atributos</h4>
+        <h4>descripcion</h4>
+        <img src="https://bhphotovideo.com" alt="50%">
+        <p>Precio: $46000.00</p>
+        <button class="btn-agregar" data-precio="46000.00">Agregar al carrito</button>
+    </div>
+</div>
 		
-		<h3>Placas madre</h3>
-	<div class="producto">
-    <h3>w5</h3>
-	<img src="https://www.intel.com/content/dam/www/central-libraries/us/en/images/2023-01/badge-xeon-workstation-w5.png" alt="50%">
-    <p>Precio: $30000.00</p>
-    <button class="btn-agregar" data-precio="3000.00">Agregar al carrito</button>
-</div>
-<div class="producto">
-    <h3>w7</h3>
-	<img src="https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=345/https://static.bhphoto.com/images/images345x345/1746627699_1835439.jpg" alt="50%">
-    <p>Precio: $35000.00</p>
-    <button class="btn-agregar" data-precio="35000.00">Agregar al carrito</button>
-</div>
-	<div class="producto">
-    <h3>w9</h3>
-	<img src="https://www.intel.com/content/dam/www/central-libraries/us/en/images/2023-01/badge-xeon-workstation-w9.png" alt="50%">
-    <p>Precio: $46000.00</p>
-    <button class="btn-agregar" data-precio="46000.00">Agregar al carrito</button>
-</div>
-		<h3>tarjetas graficas</h3>
-	<div class="producto">
-    <h3>w5</h3>
-	<img src="https://www.intel.com/content/dam/www/central-libraries/us/en/images/2023-01/badge-xeon-workstation-w5.png" alt="50%">
-    <p>Precio: $30000.00</p>
-    <button class="btn-agregar" data-precio="3000.00">Agregar al carrito</button>
-</div>
-<div class="producto">
-    <h3>w7</h3>
-	<img src="https://www.bhphotovideo.com/cdn-cgi/image/fit=scale-down,width=345/https://static.bhphoto.com/images/images345x345/1746627699_1835439.jpg" alt="50%">
-    <p>Precio: $35000.00</p>
-    <button class="btn-agregar" data-precio="35000.00">Agregar al carrito</button>
-</div>
-	<div class="producto">
-    <h3>w9</h3>
-	<img src="https://www.intel.com/content/dam/www/central-libraries/us/en/images/2023-01/badge-xeon-workstation-w9.png" alt="50%">
-    <p>Precio: $46000.00</p>
-    <button class="btn-agregar" data-precio="46000.00">Agregar al carrito</button>
-</div>
-
-
-	
-	
-
-	<footer class="pie-pagina">
-  <div class="footer-contenedor">
-    
-    <!-- Columna 1: Sobre la tienda -->
-    <div class="footer-columna">
-      <h3>POUL INC CORPORATION</h3>
-      <p>La mejor tienda en línea de México. Calidad y confianza en cada envío.</p>
+<h3>Placas madre</h3>
+<div class="catalogo-contenedor">
+    <div class="producto">
+        <h3>Tarjeta Madre w5</h3>
+        <img src="https://intel.com" alt="50%">
+        <p>Precio: $30000.00</p>
+        <button class="btn-agregar" data-precio="30000.00">Agregar al carrito</button>
     </div>
 
-    <!-- Columna 2: Enlaces de Soporte -->
-    <div class="footer-columna">
-      <h3>Atención al Cliente</h3>
-      <ul>
-        <li><a href="#">Preguntas Frecuentes</a></li>
-        <li><a href="#">Políticas de Devolución</a></li>
-        <li><a href="#">Rastrea tu Pedido</a></li>
-      </ul>
+    <div class="producto">
+        <h3>Tarjeta Madre w7</h3>
+        <img src="https://bhphotovideo.com" alt="50%">
+        <p>Precio: $35000.00</p>
+        <button class="btn-agregar" data-precio="35000.00">Agregar al carrito</button>
     </div>
+</div>
 
-    <!-- Columna 3: Enlaces Legales -->
-    <div class="footer-columna">
-      <h3>Legales y Derechos</h3>
-      <ul>
-        <li><a href="#">Términos y Condiciones</a></li>
-        <li><a href="#">Aviso de Privacidad</a></li>
-        <li><a href="#">Contrato de Adhesión (PROFECO)</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- Barra final de derechos de autor -->
-  <div class="footer-inferior">
-    <p>&copy; 2026 POUL INC CORPORATION. Todos los derechos reservados.</p>
-  </div>
-</footer>
-
-
-
-<!-- Agrega este contenedor oculto en cualquier parte de tu <body> para el pop-up -->
+<!-- Contenedor del pop-up flotante -->
 <div id="pop-up-apple" style="display:none; position:fixed; top:20px; right:20px; background:#333; color:#fff; padding:15px 25px; border-radius:8px; font-family:-apple-system, BlinkMacSystemFont, sans-serif; box-shadow:0 4px 12px rgba(0,0,0,0.15); z-index:9999;">
     Agregado: <span id="pop-up-nombre" style="font-weight:bold;"></span>
 </div>
 
 <script>
 $(document).ready(function() {
-    // Iniciamos el carrito leyendo la memoria
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
     $('.btn-agregar').click(function() {
-        // Buscamos el nombre en el <h3> y el precio en el botón
         let nombre = $(this).siblings('h3').text(); 
         let precio = parseFloat($(this).attr('data-precio'));
 
-        // Guardamos el objeto en la memoria del navegador
         carrito.push({ nombre: nombre, precio: precio });
         localStorage.setItem('carrito', JSON.stringify(carrito));
 
-        // Pop-up visual (opcional)
+        // Activa el mensaje flotante estilo Apple
         $('#pop-up-nombre').text(nombre);
         $('#pop-up-apple').fadeIn(300).delay(2000).fadeOut(300);
     });

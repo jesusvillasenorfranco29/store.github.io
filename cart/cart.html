@@ -151,66 +151,66 @@
     </div>
 
     <script>
-    $(document).ready(function() {
-        // 1. Leer los productos desde la memoria
-        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-        let subtotal = 0;
+$(document).ready(function() {
+    // 1. Leer los productos desde la memoria
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    let subtotal = 0;
 
-        if(carrito.length === 0) {
-            $('#lista-productos').html('<p>Tu bolsa está vacía.</p>');
-            $('#btn-abrir-pago').prop('disabled', true).css('background', '#a1a1a6');
-        } else {
-            carrito.forEach(function(producto) {
-                subtotal += producto.precio;
-                $('#lista-productos').append(`
-                    <div class="item-carrito">
-                        <span>${producto.nombre}</span>
-                        <span>$${producto.precio.toFixed(2)}</span>
-                    </div>
-                `);
-            });
-        }
-
-        // Calcular costo de envío dinámico (Si compra más de $100 es gratis, si no $10)
-        let costoEnvio = subtotal > 100 || subtotal === 0 ? 0.00 : 10.00;
-        let totalFinal = subtotal + costoEnvio;
-
-        // 2. Controlar la apertura y cierre del Pop-up con jQuery
-        $('#btn-abrir-pago').click(function() {
-            // Actualizar los datos financieros dentro del pop-up justo antes de mostrarlo
-            $('#pop-subtotal').text(subtotal.toFixed(2));
-            $('#pop-envio').text(costoEnvio.toFixed(2));
-            $('#pop-total').text(totalFinal.toFixed(2));
-            
-            // Mostrar pop-up con efecto flex
-            $('#modal-pago').css('display', 'flex');
+    if(carrito.length === 0) {
+        $('#lista-productos').html('<p>Tu bolsa está vacía.</p>');
+        $('#btn-abrir-pago').prop('disabled', true).css('background', '#a1a1a6');
+    } else {
+        carrito.forEach(function(producto) {
+            subtotal += producto.precio;
+            $('#lista-productos').append(`
+                <div class="item-carrito">
+                    <span>${producto.nombre}</span>
+                    <span>$${producto.precio.toFixed(2)}</span>
+                </div>
+            `);
         });
+    }
 
-        $('#btn-cerrar-pago').click(function() {
-            $('#modal-pago').hide();
-        });
+    // Calcular costo de envío dinámico
+    let costoEnvio = subtotal > 100 || subtotal === 0 ? 0.00 : 10.00;
+    let totalFinal = subtotal + costoEnvio;
 
-        // Cerrar si dan clic afuera del recuadro blanco
-        $('#modal-pago').click(function(e) {
-            if ($(e.target).hasClass('modal-overlay')) {
-                $(this).hide();
-            }
-        });
-
-        // 3. Simulación del envío de pago
-        $('#form-pago-ficticio').submit(function(e) {
-            e.preventDefault(); // Evita que la página se recargue
-            
-            alert('Procesando pago de $' + totalFinal.toFixed(2) + ' de forma segura...');
-            
-            // Simular retraso de procesamiento de 2 segundos
-            setTimeout(function() {
-                alert('¡Pago Simulado Exitosamente! Gracias por tu compra escolar.');
-                localStorage.removeItem('carrito'); // Vaciar el carrito después de comprar
-                window.location.href = 'index.html'; // Redirigir a la tienda
-            }, 2000);
-        });
+    // 2. Controlar la apertura y cierre del Pop-up con jQuery
+    $('#btn-abrir-pago').click(function() {
+        $('#pop-subtotal').text(subtotal.toFixed(2));
+        $('#pop-envio').text(costoEnvio.toFixed(2));
+        $('#pop-total').text(totalFinal.toFixed(2));
+        
+        $('#modal-pago').css('display', 'flex');
     });
-    </script>
+
+    $('#btn-cerrar-pago').click(function() {
+        $('#modal-pago').hide();
+    });
+
+    $('#modal-pago').click(function(e) {
+        if ($(e.target).hasClass('modal-overlay')) {
+            $(this).hide();
+        }
+    });
+
+    // 3. Simulación del envío de pago
+    $('#form-pago-ficticio').submit(function(e) {
+        e.preventDefault();
+        
+        alert('Procesando pago de $' + totalFinal.toFixed(2) + ' de forma segura...');
+        
+        setTimeout(function() {
+            alert('¡Pago Simulado Exitosamente! Gracias por tu compra escolar.');
+            localStorage.removeItem('carrito'); 
+            
+            // CORREGIDO: "../" sale de la carpeta "cart" para regresar al index principal correctamente
+            window.location.href = '../index.html'; 
+        }, 2000);
+    });
+});
+</script>
+
+
 </body>
 </html>
