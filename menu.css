@@ -33,7 +33,7 @@
 }
 .menu a:link, 
 .menu a:visited {
-  color: #ffffff; /* Cambia este color si no lo quieres blanco */
+  color: #8A8A8A; /* Cambia este color si no lo quieres blanco */
   text-decoration: none !important;
 }
 
