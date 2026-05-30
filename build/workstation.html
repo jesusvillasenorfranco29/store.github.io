@@ -67,21 +67,21 @@
 
 <script>
 $(document).ready(function() {
-    // Al usar el mismo nombre de memoria 'carrito' en todo el sitio, las páginas se comunican
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
     $('.btn-agregar').click(function() {
+        // 1. Obtenemos el nombre y el precio del producto clonado
         let nombre = $(this).siblings('h3').text(); 
         let precio = parseFloat($(this).attr('data-precio'));
 
-        carrito.push({ nombre: nombre, precio: precio });
-        localStorage.setItem('carrito', JSON.stringify(carrito));
+        // 2. Codificamos los textos para que la URL no se rompa con los espacios
+        let nombreUrl = encodeURIComponent(nombre);
+        let precioUrl = precio.toFixed(2);
 
-        // Animación del Pop-up
-        $('#pop-up-nombre').text(nombre);
-        $('#pop-up-apple').fadeIn(300).delay(1500).fadeOut(300);
+        // 3. Redirigimos al carrito inyectando las variables en el enlace
+        // Usamos "../" para salir de la carpeta build/ e ingresar a cart/
+        window.location.href = `../cart/cart.html?nombre=${nombreUrl}&precio=${precioUrl}`;
     });
 });
 </script>
+
 </body>
 </html>

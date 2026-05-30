@@ -123,63 +123,71 @@
     </div>
 
     <script>
-    $(document).ready(function() {
-        // PASO 2: Leer el arreglo 'carrito' guardado en localStorage
-        let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-        let subtotal = 0;
+$(document).ready(function() {
+    // 1. Leer los parámetros que vienen en la barra de direcciones (URL)
+    let urlParams = new URLSearchParams(window.location.search);
+    let productoNombre = urlParams.get('nombre');
+    let productoPrecio = parseFloat(urlParams.get('precio'));
 
-        // Limpiar contenedor por seguridad antes de agregar elementos
-        $('#lista-productos').empty();
+    let subtotal = 0;
 
-        if(carrito.length === 0) {
-            $('#lista-productos').html('<p>Tu bolsa está vacía.</p>');
-            $('#btn-abrir-pago').prop('disabled', true).css('background', '#a1a1a6');
-        } else {
-            // Recorrer e insertar cada objeto guardado
-            carrito.forEach(function(producto) {
-                subtotal += producto.precio;
-                $('#lista-productos').append(`
-                    <div class="item-carrito">
-                        <span>${producto.nombre}</span>
-                        <span>$${producto.precio.toFixed(2)}</span>
-                    </div>
-                `);
-            });
-        }
+    // Limpiar el contenedor por seguridad
+    $('#lista-productos').empty();
 
-        let costoEnvio = subtotal > 100 || subtotal === 0 ? 0.00 : 10.00;
-        let totalFinal = subtotal + costoEnvio;
+    // 2. Verificar si la URL trae un producto válido
+    if (!productoNombre || isNaN(productoPrecio)) {
+        $('#lista-productos').html('<p>Tu bolsa está vacía.</p>');
+        $('#btn-abrir-pago').prop('disabled', true).css('background', '#a1a1a6');
+    } else {
+        // Si hay producto, fijamos el subtotal con su precio
+        subtotal = productoPrecio;
+        
+        // Lo pintamos en la pantalla de la bolsa
+        $('#lista-productos').append(`
+            <div class="item-carrito">
+                <span>${productoNombre}</span>
+                <span>$${subtotal.toFixed(2)}</span>
+            </div>
+        `);
+    }
 
-        $('#btn-abrir-pago').click(function() {
-            $('#pop-subtotal').text(subtotal.toFixed(2));
-            $('#pop-envio').text(costoEnvio.toFixed(2));
-            $('#pop-total').text(totalFinal.toFixed(2));
-            $('#modal-pago').css('display', 'flex');
-        });
+    // 3. Cálculos matemáticos automáticos para el envío y total
+    let costoEnvio = subtotal > 100 || subtotal === 0 ? 0.00 : 10.00;
+    let totalFinal = subtotal + costoEnvio;
 
-        $('#btn-cerrar-pago').click(function() {
-            $('#modal-pago').hide();
-        });
-
-        $('#modal-pago').click(function(e) {
-            if ($(e.target).hasClass('modal-overlay')) {
-                $(this).hide();
-            }
-        });
-
-        $('#form-pago-ficticio').submit(function(e) {
-            e.preventDefault();
-            alert('Procesando pago de $' + totalFinal.toFixed(2) + ' de forma segura...');
-            
-            setTimeout(function() {
-                alert('¡Pago Simulado Exitosamente! Gracias por tu compra escolar.');
-                localStorage.removeItem('carrito');
-                
-                // PASO 3: Ruta corregida para salir de la carpeta cart/ y regresar al index.html de la raíz
-                window.location.href = '../index.html';
-            }, 2000);
-        });
+    // 4. Controlar la apertura del Pop-up Modal con los datos actualizados
+    $('#btn-abrir-pago').click(function() {
+        $('#pop-subtotal').text(subtotal.toFixed(2));
+        $('#pop-envio').text(costoEnvio.toFixed(2));
+        $('#pop-total').text(totalFinal.toFixed(2));
+        
+        $('#modal-pago').css('display', 'flex');
     });
-    </script>
+
+    $('#btn-cerrar-pago').click(function() {
+        $('#modal-pago').hide();
+    });
+
+    $('#modal-pago').click(function(e) {
+        if ($(e.target).hasClass('modal-overlay')) {
+            $(this).hide();
+        }
+    });
+
+    // 5. Simulación del envío de pago ficticio
+    $('#form-pago-ficticio').submit(function(e) {
+        e.preventDefault();
+        
+        alert('Procesando pago de $' + totalFinal.toFixed(2) + ' de forma segura con tu banco...');
+        
+        setTimeout(function() {
+            alert('¡Pago Simulado Exitosamente! Gracias por tu compra escolar.');
+            // Regresa al index de la raíz saliendo de cart/ con ../
+            window.location.href = '../index.html';
+        }, 2000);
+    });
+});
+</script>
+
 </body>
 </html>
