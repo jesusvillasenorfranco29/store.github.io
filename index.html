@@ -1,122 +1,198 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="utf-8">
-<title>index</title>
-  <script src="https://jquery.com"></script>
-  <link rel="icon" href="logo.ico">
-  <link href="menu.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bioraiz - Inicio Replicado</title>
+    <style>
+.interactive-banner {
+    width: 100%;
+    padding: 80px 20px;
+    background-color: #f3f6f9; /* Fondo gris claro */
+    text-align: center;        /* Centra el texto por defecto */
+    border-top: 1px solid #e0e0e0;
+    
+    /* Configuración para forzar el centrado absoluto de todo el contenido */
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* Centra horizontalmente el título y el párrafo */
+    justify-content: center;   /* Centra verticalmente */
+}
+
+.banner-description {
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 25px;
+    max-width: 650px;          /* Limita el ancho para que el texto no se estire demasiado */
+    margin-left: auto;         /* Refuerza el centrado en el eje horizontal */
+    margin-right: auto;
+    color: #333333;
+}
+
+.products-grid {
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;          /* Cambiamos de Grid a Flexbox */
+    flex-wrap: wrap;        /* Permite que se acomoden abajo si agregas más */
+    justify-content: center; /* ¡Esto centra perfectamente el producto en la pantalla! */
+    gap: 50px;
+    padding: 0 20px;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* --- MENÚ SUPERIOR DE BIORAÍZ PERFECTAMENTE ALINEADO --- */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Centra verticalmente el menú con el logo */
+    padding: 10px 40px;
+    border-bottom: 2px solid #d1121d; /* Línea roja delgada de Folicure */
+    background-color: #ffffff;
+}
+
+/* Ajuste del tamaño del logo para que no deforme el Header */
+.site-header img {
+    height: 120px; /* Controla la altura máxima de la imagen de Bioraíz */
+    width: auto;
+    display: block;
+}
+
+.main-nav {
+    display: flex;
+    gap: 25px; /* Espaciado uniforme entre los links */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding: 5px 0;
+}
+
+
+}
+
+/* Si se abre en celular, se pone una columna bajo otra automáticamente */
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el título, la foto y el botón entre sí */
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Arial Black', 'Impact', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+/* Contenedor de la foto fijo para evitar que fotos desiguales deformen el diseño */
+.image-box {
+    width: 100%;
+    max-width: 480px; /* Ancho máximo idéntico al de Folicure */
+    height: 480px;    /* Altura fija para que los dos bloques midan exactamente lo mismo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    overflow: hidden;
+    background-color: #f9f9f9; /* Fondo gris claro neutral por si la foto no cubre todo */
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta y adapta la imagen perfectamente al recuadro sin deformarla */
+    display: block;
+}
+.section-title::before {
+    color: #d1121d;
+    font-weight: 900;
+}
+/* --- BOTÓN ANCHO Y CENTRADO --- */
+.btn-action {
+    display: inline-block;
+    background-color: #0b1a30; /* Azul oscuro */
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 15px 65px; /* Botón ancho e imponente */
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-action:hover {
+    background-color: #172d4c;
+}
+
+    </style>
 </head>
 <body>
-<ul class="menu">
-    <li><a href="index.html">index</a></li>
-    <li><a href="products.html">products</a><ul>
-        <li><a href="products/procesors.html">procesadores</a></li>
-        <li><a href="products/ram.html">momorias ram</a></li>
-        <li><a href="products/graphicards.html">tarjetas graficas</a></li>
-        <li><a href="cart/workstation.html">tarjetas madre</a></li>
-      </ul></li>
-    <li><a href="#">build</a><ul>
-      <li><a href="build/gamer.html">computadoras gamer</a></li>
-      <li><a href="build/workstation.html">workstation</a></li>
-    </ul></li>
-	<li class="carrito-icono"><a href="cart/cart.html"><img src="bag.svg" alt="Carrito de compras"></a>
-    </li>
-</ul>
-<h1>en oferta</h1>
-	
-	
-	
-	
-	<div class="catalogo-contenedor">
-<div class="producto">
-    <h3>gtx 1050</h3>
-	<img src="https://m.media-amazon.com/images/I/71BPrme0r4L._AC_SL1500_.jpg" alt="50%">
-    <p>Precio: $1000.00</p>
-    <!-- El atributo data-precio es el más importante -->
-    <button class="btn-agregar" data-precio="1000.00">Agregar al carrito</button>
-</div>
 
-		
-<!-- Producto 2 -->
-<div class="producto">
-    <h3>dial up modem card</h3>
-	<img src="https://m.media-amazon.com/images/I/512EYlDREmL._AC_SL1000_.jpg" alt="50%">
-    <p>Precio: $500.00</p>
-    <button class="btn-agregar" data-precio="500.00">Agregar al carrito</button>
-</div>
-	</div>
+    <!-- MENÚ SUPERIOR -->
+    <header class="site-header">
+        <div class="logo-placeholder"><a href="index.html""><img src="Bioraiz.jpg"></div>
+        <nav class="main-nav">
+            <a href="#">Productos</a>
+            <a href="#">Control Caída</a>
+            <a href="#">Control Caspa</a>
+            <a href="#">Vende nuestros productos</a>
+        </nav>
+    </header>
 
 
-	
-	
-	
-<footer class="pie-pagina">
-  <div class="footer-contenedor">
-    
-    <!-- Columna 1: Sobre la tienda -->
-    <div class="footer-columna">
-      <h3>POUL INC CORPORATION</h3>
-      <p>La mejor tienda en línea de México. Calidad y confianza en cada envío.</p>
-    </div>
+    <main class="products-grid">
+        
+        
+        <section class="category-card">
+            <h2 class="section-title">Control Caída</h2>
+            <div class="image-box">
+                <img src="https://cdn.shopify.com/s/files/1/0775/4471/8614/files/shampoo_control_anticaida_-_holisstree.jpg?v=1737506514">
+            </div>
+            <a href="#" class="btn-action">Conoce Más</a>
+        </section>
 
-    <!-- Columna 2: Enlaces de Soporte -->
-    <div class="footer-columna">
-      <h3>Atención al Cliente</h3>
-      <ul>
-        <li><a href="#">Preguntas Frecuentes</a></li>
-        <li><a href="#">Políticas de Devolución</a></li>
-        <li><a href="#">Rastrea tu Pedido</a></li>
-      </ul>
-    </div>
+        
 
-    <!-- Columna 3: Enlaces Legales -->
-    <div class="footer-columna">
-      <h3>Legales y Derechos</h3>
-      <ul>
-        <li><a href="#">Términos y Condiciones</a></li>
-        <li><a href="#">Aviso de Privacidad</a></li>
-        <li><a href="#">Contrato de Adhesión (PROFECO)</a></li>
-      </ul>
-    </div>
+    </main>
 
-  </div>
+   
+    <section class="interactive-banner">
+        <h2 class="section-title">El producto perfecto para ti</h2>
+        <p class="banner-description">
+            ¿Sabes que Bioraiz funciona pero no cuál es el adecuado para ti?<br><br>
+            Descúbrelo con unas sencillas preguntas.
+        </p>
+    </section>
 
 
+    <section style="margin: 60px 0; text-align: center;">
+        <h2 class="section-title">Artículos y Consejos</h2>
+    </section>
 
-  <!-- Barra final de derechos de autor -->
-  <div class="footer-inferior">
-    <p>&copy; 2026 POUL INC CORPORATION. Todos los derechos reservados.</p>
-  </div>
-</footer>
-
-
-
-
-<!-- Agrega este contenedor oculto en cualquier parte de tu <body> para el pop-up -->
-<div id="pop-up-apple" style="display:none; position:fixed; top:20px; right:20px; background:#333; color:#fff; padding:15px 25px; border-radius:8px; font-family:-apple-system, BlinkMacSystemFont, sans-serif; box-shadow:0 4px 12px rgba(0,0,0,0.15); z-index:9999;">
-    Agregado: <span id="pop-up-nombre" style="font-weight:bold;"></span>
-</div>
-
-<script>
-$(document).ready(function() {
-    // 1. Cargar carrito previo si existe en la memoria, si no, empezar en vacío
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-
-    $('.btn-agregar').click(function() {
-        // Obtenemos los datos del producto usando jQuery
-        let nombre = $(this).siblings('h3').text(); 
-        let precio = parseFloat($(this).attr('data-precio'));
-
-        // 2. Guardamos el objeto en nuestra lista
-        carrito.push({ nombre: nombre, precio: precio });
-        localStorage.setItem('carrito', JSON.stringify(carrito));
-
-        // 3. EFECTO POP-UP (Estilo Apple: aparece, espera y se desvanece)
-        $('#pop-up-nombre').text(nombre);
-        $('#pop-up-apple').fadeIn(300).delay(2000).fadeOut(300);
-    });
-});
-</script>
 </body>
 </html>
