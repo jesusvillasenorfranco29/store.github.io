@@ -33,10 +33,10 @@
 .products-grid {
     max-width: 1200px;
     margin: 50px auto;
-    display: flex;          /* Cambiamos de Grid a Flexbox */
-    flex-wrap: wrap;        /* Permite que se acomoden abajo si agregas más */
-    justify-content: center; /* ¡Esto centra perfectamente el producto en la pantalla! */
-    gap: 50px;
+    display: flex;          /* Cambia de grid a flex */
+    flex-wrap: wrap;        /* Permite que los elementos bajen en celulares */
+    justify-content: center; /* Centra el contenido */
+    gap: 40px;
     padding: 0 20px;
 }
 * {
@@ -108,24 +108,22 @@ body {
     margin-bottom: 25px;
 }
 
-/* Contenedor de la foto fijo para evitar que fotos desiguales deformen el diseño */
 .image-box {
     width: 100%;
-    max-width: 480px; /* Ancho máximo idéntico al de Folicure */
-    height: 480px;    /* Altura fija para que los dos bloques midan exactamente lo mismo */
+    max-width: 480px;      /* Tamaño máximo en computadoras */
+    height: auto;          /* Altura flexible */
+    aspect-ratio: 1 / 1;   /* Mantiene el recuadro cuadrado */
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 25px;
     overflow: hidden;
-    background-color: #f9f9f9; /* Fondo gris claro neutral por si la foto no cubre todo */
 }
 
 .image-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Recorta y adapta la imagen perfectamente al recuadro sin deformarla */
-    display: block;
+    object-fit: cover;     /* Ajusta la foto sin deformarla */
 }
 .section-title::before {
     color: #d1121d;
