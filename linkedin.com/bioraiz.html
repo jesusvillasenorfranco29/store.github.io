@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioRaiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BARRA SUPERIOR ESTILO LINKEDIN -->
+    <header class="navbar">
+        <div class="nav-contenido">
+            <div class="logo-in">in</div>
+            <input type="text" class="buscador" placeholder="Buscar empresas, empleos o personas...">
+        </div>
+    </header>
+
+    <main class="contenedor-principal">
+        
+        <!-- CABECERA DE LA EMPRESA -->
+        <section class="tarjeta-empresa">
+            <div class="portada"></div>
+            <div class="info-cabecera">
+                <div class="logo-empresa">BioRaiz</div>
+                <div class="datos-empresa">
+                    <h1>BioRaiz</h1>
+                    <p class="eslogan">Innovación en desarrollo de software y soluciones en la nube.</p>
+                    <p class="metadatos">Servicios de Jabón ecologico • Guadalajara, Jalisco • <span id="contador-seguidores">14,520</span> seguidores</p>
+                    
+                    <div class="botones-accion">
+                        <button id="btn-seguir" class="btn-primario" onclick="alternarSeguir()">+ Seguir</button>
+                        <button class="btn-secundario" onclick="cambiarTab('empleos')">Ver empleos</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PESTAÑAS DE NAVEGACIÓN -->
+            <nav class="tabs">
+                <button class="tab-btn activo" onclick="cambiarTab('inicio', this)">Inicio</button>
+                <button class="tab-btn" onclick="cambiarTab('acerca', this)">Acerca de</button>
+                <button class="tab-btn" onclick="cambiarTab('empleos', this)">Empleos</button>
+            </nav>
+        </section>
+
+        <!-- SECCIÓN 1: INICIO (PUBLICACIONES) -->
+        <section id="tab-inicio" class="seccion-tab activa">
+            <div class="tarjeta-contenido">
+                <h3>Publicaciones recientes</h3>
+                
+                <article class="post">
+                    <div class="post-autor">
+                        <div class="mini-logo">BioRaiz</div>
+                        <div>
+                            <strong>BioRaiz</strong>
+                            <small>Hace 1 minuto</small>
+                        </div>
+                    </div>
+                    <p>¡Nuestros Bioquimicos encontraron una proteina en el Adn de la cebolla, que evita la caida de cabello.</p>
+                </article>
+
+                <article class="post">
+                    <div class="post-autor">
+                        <div class="mini-logo">BioRaiz</div>
+                        <div>
+                            <strong>BioRaiz</strong>
+                            <small>Hace 1 semana</small>
+                        </div>
+                    </div>
+                    <p>Gracias a nuestros más de 14,000 seguidores por acompañarnos en el lanzamiento de nuestra nueva plataforma de comercio electrónico. Seguimos construyendo el futuro digital.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: ACERCA DE -->
+        <section id="tab-acerca" class="seccion-tab">
+            <div class="tarjeta-contenido">
+                <h3>Descripción general</h3>
+                <p>En BioRaiz nos dedicamos a desarollar Jabón Ecologico y natural. Nuestro equipo combina la ingeniería en Bioqumica, cosmetologia en un producto 100% degradable.</p>
+                
+                <div class="grid-detalles">
+                    <div>
+                        <strong>Sitio web</strong>
+                        <p>https://l1nq.com/p4cv4ov</p>
+                    </div>
+                    <div>
+                        <strong>Tamaño de la empresa</strong>
+                        <p>50-200 empleados</p>
+                    </div>
+                    <div>
+                        <strong>Sede principal</strong>
+                        <p>Zapopan / Guadalajara, Jal.</p>
+                    </div>
+                    <div>
+                        <strong>Especialidades</strong>
+                        <p>Desarrollo de Jabon ecologico y Degradable</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: EMPLEOS -->
+        <section id="tab-empleos" class="seccion-tab">
+            <div class="tarjeta-contenido">
+                <h3>Empleos publicados recientemente</h3>
+                <p class="subtitulo">Encuentra tu próxima oportunidad profesional con nosotros.</p>
+
+                <div class="lista-empleos">
+                    <!-- Vacante 1 -->
+                    <div class="tarjeta-empleo">
+                        <div>
+                            <h4>Bioqimico Junior</h4>
+                            <p class="ubicacion">Zapopan, Jalisco, (Presencial)</p>
+                            <span class="etiqueta-tiempo">Publicado hace 3 días • Solicitud sencilla</span>
+                        </div>
+                        <button class="btn-primario" onclick="abrirModal('Bioqimico Junior')">Postularme</button>
+                    </div>
+
+                    <!-- Vacante 2 -->
+                    <div class="tarjeta-empleo">
+                        <div>
+                            <h4>Bioqumico Apreniz</h4>
+                            <p class="ubicacion">Zapopán Jalisco, (Presencial)</p>
+                            <span class="etiqueta-tiempo">Publicado hace 5 días • Solicitud sencilla</span>
+                        </div>
+                        <button class="btn-primario" onclick="abrirModal('Bioqumico Apreniz')">Postularme</button>
+                    </div>
+
+                    <!-- Vacante 3 -->
+                    <div class="tarjeta-empleo">
+                        <div>
+                            <h4>Abogado</h4>
+                            <p class="ubicacion">Zapopan, Jalisco (Presencial)</p>
+                            <span class="etiqueta-tiempo">Publicado hace 1 semana</span>
+                        </div>
+                        <button class="btn-primario" onclick="abrirModal('Abogado')">Postularme</button>
+                    </div>
+
+                    <!-- Vacante 4 -->
+                    <div class="tarjeta-empleo">
+                        <div>
+                            <h4>Transportista</h4>
+                            <p class="ubicacion">Zapopan, Jalisco (Presencial)</p>
+                            <span class="etiqueta-tiempo">Publicado hace 1 semana</span>
+                        </div>
+                        <button class="btn-primario" onclick="abrirModal('Transportista')">Postularme</button>
+                    </div>
+
+                    <!-- Vacante 5 -->
+                    <div class="tarjeta-empleo">
+                        <div>
+                            <h4>Empacador</h4>
+                            <p class="ubicacion">Zapopan, Jalisco (Presencial)</p>
+                            <span class="etiqueta-tiempo">Publicado hace 1 semana</span>
+                        </div>
+                        <button class="btn-primario" onclick="abrirModal('Empacador')">Postularme</button>
+                    </div>
+
+                    <!-- Vacante 6 -->
+                    <div class="tarjeta-empleo">
+                        <div>
+                            <h4>Cosmetologo</h4>
+                            <p class="ubicacion">Zapopan, Jalisco (Presencial)</p>
+                            <span class="etiqueta-tiempo">Publicado hace 1 semana</span>
+                        </div>
+                        <button class="btn-primario" onclick="abrirModal('Cosmetologo')">Postularme</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MODAL PARA POSTULARSE A UN EMPLEO -->
+    <div id="modal-postulacion" class="modal">
+        <div class="modal-caja">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <h3 id="titulo-vacante">Postularse a vacante</h3>
+            <form onsubmit="enviarSolicitud(event)">
+                <div class="campo">
+                    <label>Nombre completo</label>
+                    <input type="text" id="postulante-nombre" placeholder="Ej. Ana López" required>
+                </div>
+                <div class="campo">
+                    <label>Correo electrónico</label>
+                    <input type="email" id="postulante-email" placeholder="ana@correo.com" required>
+                </div>
+                <div class="campo">
+                    <label>Enlace a tu portafolio o GitHub</label>
+                    <input type="url" placeholder="https://github.com" required>
+                </div>
+                <button type="submit" class="btn-primario btn-full">Enviar solicitud</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let siguiendo = false;
+        let seguidores = 14520;
+
+        // Botón Seguir / Siguiendo
+        function alternarSeguir() {
+            const btn = document.getElementById('btn-seguir');
+            const contador = document.getElementById('contador-seguidores');
+            
+            siguiendo = !siguiendo;
+            if (siguiendo) {
+                seguidores++;
+                btn.textContent = '✓ Siguiendo';
+                btn.classList.add('siguiendo');
+            } else {
+                seguidores--;
+                btn.textContent = '+ Seguir';
+                btn.classList.remove('siguiendo');
+            }
+            contador.textContent = seguidores.toLocaleString();
+        }
+
+        // Cambiar entre pestañas (Inicio, Acerca de, Empleos)
+        function cambiarTab(nombreTab, botonClickeado) {
+            document.querySelectorAll('.seccion-tab').forEach(sec => sec.classList.remove('activa'));
+            document.getElementById('tab-' + nombreTab).classList.add('activa');
+
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('activo'));
+            if (botonClickeado) {
+                botonClickeado.classList.add('activo');
+            } else {
+                // Si se presionó "Ver empleos" desde la cabecera
+                document.querySelectorAll('.tab-btn')[2].classList.add('activo');
+            }
+        }
+
+        // Abrir y cerrar ventana de postulación
+        function abrirModal(puesto) {
+            document.getElementById('titulo-vacante').textContent = 'Postularse: ' + puesto;
+            document.getElementById('modal-postulacion').style.display = 'flex';
+        }
+
+        function cerrarModal() {
+            document.getElementById('modal-postulacion').style.display = 'none';
+        }
+
+        function enviarSolicitud(e) {
+            e.preventDefault();
+            const nombre = document.getElementById('postulante-nombre').value;
+            alert('¡Gracias ' + nombre + '! Tu solicitud simulada ha sido enviada al equipo de reclutamiento.');
+            e.target.reset();
+            cerrarModal();
+        }
+    </script>
+</body>
+</html>

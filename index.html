@@ -3,194 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bioraiz - Inicio Replicado</title>
-    <style>
-.interactive-banner {
-    width: 100%;
-    padding: 80px 20px;
-    background-color: #f3f6f9; /* Fondo gris claro */
-    text-align: center;        /* Centra el texto por defecto */
-    border-top: 1px solid #e0e0e0;
-    
-    /* Configuración para forzar el centrado absoluto de todo el contenido */
-    display: flex;
-    flex-direction: column;
-    align-items: center;       /* Centra horizontalmente el título y el párrafo */
-    justify-content: center;   /* Centra verticalmente */
-}
-
-.banner-description {
-    font-family: Arial, sans-serif;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-top: 25px;
-    max-width: 650px;          /* Limita el ancho para que el texto no se estire demasiado */
-    margin-left: auto;         /* Refuerza el centrado en el eje horizontal */
-    margin-right: auto;
-    color: #333333;
-}
-
-.products-grid {
-    max-width: 1200px;
-    margin: 50px auto;
-    display: flex;          /* Cambia de grid a flex */
-    flex-wrap: wrap;        /* Permite que los elementos bajen en celulares */
-    justify-content: center; /* Centra el contenido */
-    gap: 40px;
-    padding: 0 20px;
-}
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #000000;
-}
-
-/* --- MENÚ SUPERIOR DE BIORAÍZ PERFECTAMENTE ALINEADO --- */
-.site-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Centra verticalmente el menú con el logo */
-    padding: 10px 40px;
-    border-bottom: 2px solid #d1121d; /* Línea roja delgada de Folicure */
-    background-color: #ffffff;
-}
-
-/* Ajuste del tamaño del logo para que no deforme el Header */
-.site-header img {
-    height: 120px; /* Controla la altura máxima de la imagen de Bioraíz */
-    width: auto;
-    display: block;
-}
-
-.main-nav {
-    display: flex;
-    gap: 25px; /* Espaciado uniforme entre los links */
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: #000000;
-    font-weight: bold;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    position: relative;
-    padding: 5px 0;
-}
-
-
-}
-
-/* Si se abre en celular, se pone una columna bajo otra automáticamente */
-@media (max-width: 768px) {
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.category-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra el título, la foto y el botón entre sí */
-    text-align: center;
-}
-
-.section-title {
-    font-family: 'Arial Black', 'Impact', sans-serif;
-    font-size: 2rem;
-    text-transform: uppercase;
-    margin-bottom: 25px;
-}
-
-.image-box {
-    width: 100%;
-    max-width: 480px;      /* Tamaño máximo en computadoras */
-    height: auto;          /* Altura flexible */
-    aspect-ratio: 1 / 1;   /* Mantiene el recuadro cuadrado */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 25px;
-    overflow: hidden;
-}
-
-.image-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;     /* Ajusta la foto sin deformarla */
-}
-.section-title::before {
-    color: #d1121d;
-    font-weight: 900;
-}
-/* --- BOTÓN ANCHO Y CENTRADO --- */
-.btn-action {
-    display: inline-block;
-    background-color: #0b1a30; /* Azul oscuro */
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-    font-weight: bold;
-    padding: 15px 65px; /* Botón ancho e imponente */
-    letter-spacing: 1px;
-    transition: background-color 0.2s ease;
-}
-
-.btn-action:hover {
-    background-color: #172d4c;
-}
-
-    </style>
+    <title>BioRaiz | Control Caída</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- MENÚ SUPERIOR -->
     <header class="site-header">
-        <div class="logo-placeholder"><a href="index.html""><img src="Bioraiz.jpg"></div>
+        <div class="logo-placeholder">
+            <a href="index.html"><img src="Bioraiz.jpg" alt="BioRaiz Logo"></a>
+        </div>
         <nav class="main-nav">
-            <a href="#">Productos</a>
-            <a href="#">Control Caída</a>
-            <a href="#">Control Caspa</a>
-            <a href="#">Vende nuestros productos</a>
+            <a href="site/controlcaida.html">Control Caída</a>
+            <a href="site/serviciosparahosteleria.html">Servicios para hostelería</a>
+            <a href="site/vendedor.html">Vende nuestros productos</a>
         </nav>
     </header>
 
+    <!-- SIMULADOR DE COMPRA FLOTANTE -->
+    <div class="caja-principal">
 
+        <!-- PASO 1: EL PRODUCTO -->
+        <div id="paso-1" class="paso activo">
+            <h2>Producto Destacado</h2>
+            <div class="producto-card">
+                <h3>BioRaiz Anticaída de Cabello</h3>
+                <p class="descripcion-prod">El jabón BioRaiz anticaída de cabello integra una proteína de la sábila.</p>
+                <div class="precio">$45.00 MXN</div>
+                <button onclick="irAPaso(2)">Comprar Ahora</button>
+            </div>
+        </div>
+
+        <!-- PASO 2: TARJETA BANCARIA -->
+        <div id="paso-2" class="paso">
+            <h2>Método de Pago</h2>
+            
+            <div class="tarjeta-visual">
+                <div class="tarjeta-etiqueta">TARJETA SIMULADA</div>
+                <div class="tarjeta-numero" id="vis-numero">•••• •••• •••• ••••</div>
+                <div class="tarjeta-detalles">
+                    <span id="vis-nombre">NOMBRE DEL TITULAR</span>
+                    <span id="vis-exp">MM/AA</span>
+                </div>
+            </div>
+
+            <form onsubmit="validarTarjeta(event)">
+                <div class="campo">
+                    <label>Número de Tarjeta (16 dígitos ficticios)</label>
+                    <input type="text" id="input-numero" maxlength="19" placeholder="4500 1234 5678 9010" oninput="actualizarTarjeta()" required>
+                </div>
+                <div class="campo">
+                    <label>Nombre en la Tarjeta</label>
+                    <input type="text" id="input-nombre" placeholder="Ej. Juan Pérez" oninput="actualizarTarjeta()" required>
+                </div>
+                <div class="fila">
+                    <div class="campo col-flex">
+                        <label>Vencimiento</label>
+                        <input type="text" id="input-exp" maxlength="5" placeholder="12/28" oninput="actualizarTarjeta()" required>
+                    </div>
+                    <div class="campo col-flex">
+                        <label>CVV</label>
+                        <input type="password" id="input-cvv" maxlength="3" placeholder="123" required>
+                    </div>
+                </div>
+                <button type="submit">Continuar al Envío</button>
+                <button type="button" class="btn-secundario" onclick="irAPaso(1)">Volver</button>
+            </form>
+        </div>
+
+        <!-- PASO 3: LUGAR DE ENVÍO -->
+        <div id="paso-3" class="paso">
+            <h2>Dirección de Envío</h2>
+            <form onsubmit="finalizarPedido(event)">
+                <div class="campo">
+                    <label>Calle y Número</label>
+                    <input type="text" id="envio-calle" placeholder="Av. Vallarta #1234" required>
+                </div>
+                <div class="fila">
+                    <div class="campo col-flex">
+                        <label>Ciudad / Municipio</label>
+                        <input type="text" id="envio-ciudad" placeholder="Zapopan" required>
+                    </div>
+                    <div class="campo col-flex">
+                        <label>Código Postal</label>
+                        <input type="text" id="envio-cp" maxlength="5" placeholder="45000" required>
+                    </div>
+                </div>
+                <div class="campo">
+                    <label>Referencias de entrega</label>
+                    <input type="text" id="envio-ref" placeholder="Casa blanca con portón negro">
+                </div>
+                <button type="submit">Confirmar y Pagar $45.00</button>
+                <button type="button" class="btn-secundario" onclick="irAPaso(2)">Volver a Tarjeta</button>
+            </form>
+        </div>
+
+        <!-- PASO 4: CONFIRMACIÓN -->
+        <div id="paso-4" class="paso">
+            <div class="exito-header">
+                <div class="icono-exito">✅</div>
+                <h2>¡Compra Completada Exitosa!</h2>
+                <p class="texto-exito">Tu pedido ha sido procesado correctamente.</p>
+            </div>
+            
+            <div class="resumen-box" id="resumen-final"></div>
+
+            <button onclick="reiniciarSimulador()" class="btn-reiniciar">Volver a regresar</button>
+        </div>
+
+    </div> <!-- Aquí es donde realmente debe cerrar .caja-principal -->
+
+    <!-- CONTENIDO DE TU PÁGINA -->
     <main class="products-grid">
-        
-        
         <section class="category-card">
             <h2 class="section-title">Control Caída</h2>
             <div class="image-box">
-                <img src="https://cdn.shopify.com/s/files/1/0775/4471/8614/files/shampoo_control_anticaida_-_holisstree.jpg?v=1737506514">
+                <img src="https://cdn.shopify.com/s/files/1/0775/4471/8614/files/shampoo_control_anticaida_-_holisstree.jpg?v=1737506514" alt="Control Caída">
             </div>
-            <a href="#" class="btn-action">Conoce Más</a>
+            <a href="site/controlcaida.html" class="btn-action">Conoce Más</a>
         </section>
-
-        
-
     </main>
 
-   
-    <section class="interactive-banner">
-        <h2 class="section-title">El producto perfecto para ti</h2>
-        <p class="banner-description">
-            ¿Sabes que Bioraiz funciona pero no cuál es el adecuado para ti?<br><br>
-            Descúbrelo con unas sencillas preguntas.
-        </p>
-    </section>
-
-
+    
     <section style="margin: 60px 0; text-align: center;">
         <h2 class="section-title">Artículos y Consejos</h2>
     </section>
+
+    <script>
+        function irAPaso(numeroPaso) {
+            document.querySelectorAll('.paso').forEach(div => div.classList.remove('activo'));
+            document.getElementById('paso-' + numeroPaso).classList.add('activo');
+        }
+
+        function actualizarTarjeta() {
+            let num = document.getElementById('input-numero').value.replace(/\D/g, '');
+            num = num.replace(/(.{4})/g, '$1 ').trim();
+            document.getElementById('input-numero').value = num;
+
+            document.getElementById('vis-numero').textContent = num || '•••• •••• •••• ••••';
+            
+            const nombre = document.getElementById('input-nombre').value;
+            document.getElementById('vis-nombre').textContent = nombre || 'NOMBRE DEL TITULAR';
+
+            const exp = document.getElementById('input-exp').value;
+            document.getElementById('vis-exp').textContent = exp || 'MM/AA';
+        }
+
+        function validarTarjeta(e) {
+            e.preventDefault();
+            const numLimpio = document.getElementById('input-numero').value.replace(/\s/g, '');
+            if (numLimpio.length < 16) {
+                alert('Por favor ingresa los 16 dígitos simulados de la tarjeta.');
+                return;
+            }
+            irAPaso(3);
+        }
+
+        function finalizarPedido(e) {
+            e.preventDefault();
+            const tarjeta = document.getElementById('input-numero').value;
+            const ultimos4 = tarjeta.slice(-4);
+            const calle = document.getElementById('envio-calle').value;
+            const ciudad = document.getElementById('envio-ciudad').value;
+            const cp = document.getElementById('envio-cp').value;
+
+            document.getElementById('resumen-final').innerHTML = `
+                <strong>Producto:</strong> BioRaiz Anticaída<br>
+                <strong>Total pagado:</strong> $45.00 MXN<br>
+                <strong>Método de pago:</strong> Tarjeta terminada en •••• ${ultimos4}<br>
+                <strong>Enviar a:</strong> ${calle}, ${ciudad}, CP ${cp}
+            `;
+
+            irAPaso(4);
+        }
+
+        function reiniciarSimulador() {
+            document.querySelectorAll('form').forEach(form => form.reset());
+            actualizarTarjeta();
+            irAPaso(1);
+        }
+    </script>
+
+<a href="linkedin.com/bioraiz.html"><img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/LinkedIn_icon.svg/1280px-LinkedIn_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="HTML tutorial" style="width:42px;height:42px;text-align: center;"></a>
 
 </body>
 </html>

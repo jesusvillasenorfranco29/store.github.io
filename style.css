@@ -1,0 +1,349 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eef2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================================
+   HEADER Y NAVEGACIÓN PRINCIPAL
+   ========================================= */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    border-bottom: 2px solid #d1121d;
+    background-color: #ffffff;
+    position: relative;
+    z-index: 1100;
+    width: 100%;
+}
+
+.site-header img {
+    height: 120px; 
+    width: auto;
+    display: block;
+}
+
+.main-nav {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* =========================================
+   BANNER Y GRILLA DE PRODUCTOS DE TU PÁGINA
+   ========================================= */
+.interactive-banner {
+    width: 100%;
+    padding: 80px 20px;
+    background-color: #f3f6f9;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-description {
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-top: 25px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #333333;
+}
+
+.products-grid {
+    max-width: 1200px;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Arial Black', 'Impact', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.section-title::before {
+    color: #d1121d;
+    font-weight: 900;
+}
+
+.image-box {
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-action {
+    display: inline-block;
+    background-color: #0b1a30;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 15px 65px;
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-action:hover {
+    background-color: #172d4c;
+}
+
+/* =========================================
+   SIMULADOR DE COMPRA (ARRIBA A LA DERECHA)
+   ========================================= */
+.caja-principal {
+    position: fixed;
+    top: 160px;
+    right: 20px;
+    z-index: 1000;
+    background: #fff;
+    width: 100%;
+    max-width: 380px;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    max-height: calc(100vh - 180px);
+    overflow-y: auto;
+}
+
+.paso {
+    display: none;
+}
+
+.paso.activo {
+    display: block;
+    animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.caja-principal h2 {
+    margin-top: 0;
+    color: #1a202c;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 10px;
+}
+
+.producto-card {
+    text-align: center;
+    padding: 15px 0;
+}
+
+
+}
+
+.descripcion-prod {
+    color: #718096;
+    font-size: 14px;
+}
+
+.precio {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2b6cb0;
+    margin: 10px 0;
+}
+
+/* Tarjeta Bancaria Visual */
+.tarjeta-visual {
+    background: linear-gradient(135deg, #2d3748, #1a202c);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.tarjeta-etiqueta {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.tarjeta-numero {
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin: 20px 0;
+    font-family: monospace;
+}
+
+.tarjeta-detalles {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+/* Formularios y botones del simulador */
+.campo {
+    margin-bottom: 15px;
+}
+
+.fila {
+    display: flex;
+    gap: 10px;
+}
+
+.col-flex {
+    flex: 1;
+}
+
+.caja-principal label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #4a5568;
+}
+
+.caja-principal input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.caja-principal input:focus {
+    outline: none;
+    border-color: #3182ce;
+}
+
+.caja-principal button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.caja-principal button:hover {
+    background-color: #2b6cb0;
+}
+
+.caja-principal .btn-secundario {
+    background-color: #e2e8f0;
+    color: #4a5568;
+}
+
+.caja-principal .btn-secundario:hover {
+    background-color: #cbd5e0;
+}
+
+.aviso-simulador {
+    font-size: 11px;
+    color: #718096;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Confirmación */
+.exito-header {
+    text-align: center;
+}
+
+.icono-exito {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.texto-exito {
+    color: #4a5568;
+    font-size: 14px;
+}
+
+.resumen-box {
+    background: #f7fafc;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.btn-reiniciar {
+    margin-top: 20px;
+}
+
+/* =========================================
+   ADAPTACIÓN A CELULARES
+   ========================================= */
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+
+    .products-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .caja-principal {
+        position: static;
+        max-width: 90%;
+        margin: 20px auto;
+        max-height: none;
+    }
+}
+
