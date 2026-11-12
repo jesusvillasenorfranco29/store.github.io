@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Caída</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+.hero-hosteleria {
+            background: linear-gradient(135deg, #0b1a30, #172d4c);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+        .hero-hosteleria h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+        .hero-hosteleria p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #cbd5e0;
+            line-height: 1.6;
+        }
+        .paquetes-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1150px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        .paquete-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            width: 100%;
+            max-width: 340px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            border-top: 5px solid #0b1a30;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .paquete-card.destacado {
+            border-top-color: #d1121d;
+            transform: scale(1.03);
+        }
+        .paquete-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #0b1a30;
+        }
+        .precio-paquete {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #d1121d;
+            margin: 15px 0;
+        }
+        .precio-paquete span {
+            font-size: 0.9rem;
+            color: #718096;
+            font-weight: normal;
+        }
+        .lista-beneficios {
+            list-style: none;
+            margin: 20px 0;
+            text-align: left;
+            font-size: 0.95rem;
+            color: #4a5568;
+        }
+        .lista-beneficios li {
+            padding: 8px 0;
+            border-bottom: 1px solid #edf2f7;
+        }
+        .btn-cotizar {
+            display: block;
+            text-align: center;
+            background-color: #0b1a30;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+        }
+        .btn-cotizar:hover {
+            background-color: #d1121d;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo-placeholder">
+            <a href="../index.html"><img src="../Bioraiz.jpg" alt="BioRaiz Logo"></a>
+        </div>
+        <nav class="main-nav">
+            <a href="site/controlcaida.html">Control Caída</a>
+            <a href="site/serviciohosteleria.html">Servicios para hostelería</a>
+            <a href="site/vendedor.html">Vende nuestros productos</a>
+        </nav>
+    </header>
+
+
+<div class="paquete-card">
+            <div>
+                <h3>Plan Hotel Boutique</h3>
+                <p style="color: #718096; font-size: 0.9rem;">Ideal para alojamientos de hasta 25 habitaciones.</p>
+                <div class="precio-paquete">$5,600 +iva <span>MXN / mes</span></div>
+                <ul class="lista-beneficios">
+                    <li>✓ 200 Jabones de tocador BioRaiz (30g)</li>
+                    <li>✓ Envío estándar sin costo</li>
+                </ul>
+            </div>
+            <button class="btn-cotizar" onclick="alert('Solicitud enviada para el Plan Hotel Boutique ($5600 MXN).')">Solicitar Muestra</button>
+        </div>
+</body>
